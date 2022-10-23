@@ -1,0 +1,35 @@
+<!-- <app-item [data]="prod" (item)="addToCart($event)"></app-item> -->
+<div class="item">
+  <div routerLink="/productDetalise/{{ data.id }}">
+    <img src="{{ data.url }}" />
+    <div class="body">
+      <h4>{{ data.name }}</h4>
+      <h5 class="m-2">{{ data.price }}$</h5>
+      <p>{{ data.description }}</p>
+    </div>
+  </div>
+
+  <div class="px-3mb-2d-flex justify-content-btween algin items-center m-2">
+    <button
+      class="btn btn-success m-3"
+      *ngIf="!addbutton"
+      (click)="addbutton = true"
+    >
+      Add To Cart
+    </button>
+    <div class="d-flex w-50" *ngIf="addbutton">
+      <select (change)="getAmount($event)" class="form-control" id="">
+        <option hidden value="1">1</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+      <button class="btn btn-danger m-2" (click)="add()">Add</button>
+    </div>
+  </div>
+</div>

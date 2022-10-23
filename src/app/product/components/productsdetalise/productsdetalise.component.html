@@ -1,0 +1,28 @@
+<div class="box">
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-5 col-sm-12">
+      <img src="{{ Product.url }}" />
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <div class="info">
+        <ul class="list-unstyle">
+          <li><strong>Title</strong>: {{ Product.name }}</li>
+          <li><strong>Descripation</strong>: {{ Product.description }}</li>
+          <li><strong>Price</strong>: {{ Product.price }}$</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <a
+          class="btn btn-info m-3"
+          [routerLink]="['/products']"
+          routerLinkActive="router-link-active"
+        >
+          Back To List
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <app-spinner *ngIf="loading"></app-spinner>
+  </div>
+</div>

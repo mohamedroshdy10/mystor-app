@@ -1,0 +1,73 @@
+<form [formGroup]="myform" (ngSubmit)="add()" *ngIf="!isSended">
+  <div class="form-group">
+    <label class="form-lable" class="form-lable" for="name">FullName</label>
+    <input
+      class="form-control w-50"
+      placeholder="min 3 digites"
+      required
+      formControlName="name"
+      value="mohamed"
+    />
+    <div *ngIf="myform.controls.name.touched && myform.controls.name.invalid">
+      <p *ngIf="myform.controls.name.errors?.['required']">Task is required</p>
+      <p *ngIf="myform.controls.name.errors?.['minlength']">
+        Task should be at least 3 charcaters
+      </p>
+      <p *ngIf="myform.controls.name.errors?.['pattern']">
+        Please enter a vaild Task
+      </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-lable" for="adddress">Address</label>
+    <input
+      class="form-control w-50"
+      placeholder="min 6 digites"
+      required
+      formControlName="address"
+    />
+    <div
+      *ngIf="myform.controls.address.touched && myform.controls.address.invalid"
+    >
+      <p *ngIf="myform.controls.address.errors?.['required']">
+        Task is required
+      </p>
+      <p *ngIf="myform.controls.address.errors?.['minlength']">
+        Task should be at least 3 charcaters
+      </p>
+      <p *ngIf="myform.controls.name.errors?.['pattern']">
+        Please enter a vaild Task
+      </p>
+    </div>
+  </div>
+  <div class="formgroup">
+    <label class="form-lable" for="card">Creadit Card</label>
+    <input
+      class="form-control w-50"
+      placeholder="16-dighites"
+      required
+      formControlName="card"
+      minlength="16"
+      maxlength="16"
+    />
+    <div *ngIf="myform.controls.card.touched && myform.controls.card.invalid">
+      <p *ngIf="myform.controls.card.errors?.['required']">Task is required</p>
+      <p *ngIf="myform.controls.card.errors?.['minlength']">
+        Task should be at least 16 charcaters
+      </p>
+      <p *ngIf="myform.controls.card.errors?.['maxlength']">
+        Task should be at least 16 charcaters
+      </p>
+      <p *ngIf="myform.controls.card.errors?.['pattern']">
+        Please enter a vaild Task
+      </p>
+    </div>
+  </div>
+  <button class="btn btn-success m-3 ml-0">Sumit Order</button>
+  <br />
+  <span>we will never share your credit card number with any one!</span>
+</form>
+<app-confiramation
+  [customerName]="customerName"
+  *ngIf="isSended"
+></app-confiramation>

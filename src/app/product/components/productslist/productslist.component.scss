@@ -1,0 +1,19 @@
+.box {
+  margin-left: 5px;
+  .quentity {
+    display: flex;
+    display: inline-block;
+    justify-content: space-between;
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0 20px;
+    }
+    input {
+      text-align: center;
+    }
+  }
+  img {
+    border-radius: 100px;
+  }
+}
