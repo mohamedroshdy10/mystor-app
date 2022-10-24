@@ -1,8 +1,22 @@
 # MystorApp
 
+Simple E-Commece App For display some products and show each product detalise and but products in cart and sumit form 
+to bought the products 
+
+
+the project is consistes of 3 moudle 
+product moudule
+cart module
+shared moudle
+each moudle has it's components and servies 
+we work with routing
+and we install bootstrap from npm 
+and sweetalrt2 from npm i sweetalert2
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
 ## Development server
+Run nmp i to install node_Modules
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
