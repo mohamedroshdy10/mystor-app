@@ -39,7 +39,10 @@
             <button class="btn btn-dark" (click)="minAmount(index)">-</button>
           </div>
         </td>
-        <td>{{ (item.item.price * item.quentity).toFixed(2) }} $</td>
+        <td>
+          {{ (item.item.price * item.quentity).toFixed(2) }}
+          $
+        </td>
         <td>
           <button class="btn btn-danger" (click)="DeleteProduct(index)">
             Delete

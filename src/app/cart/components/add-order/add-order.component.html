@@ -3,18 +3,21 @@
     <label class="form-lable" class="form-lable" for="name">FullName</label>
     <input
       class="form-control w-50"
-      placeholder="min 3 digites"
+      placeholder="Min 3 charcaters"
       required
       formControlName="name"
       value="mohamed"
     />
-    <div *ngIf="myform.controls.name.touched && myform.controls.name.invalid">
+    <div
+      class="form-group m-3 w-50"
+      *ngIf="myform.controls.name.touched && myform.controls.name.invalid"
+    >
       <p *ngIf="myform.controls.name.errors?.['required']">Task is required</p>
       <p *ngIf="myform.controls.name.errors?.['minlength']">
-        Task should be at least 3 charcaters
+        name should be at least 3 charcaters
       </p>
       <p *ngIf="myform.controls.name.errors?.['pattern']">
-        Please enter a vaild Task
+        Please enter a vaild name
       </p>
     </div>
   </div>
@@ -22,19 +25,21 @@
     <label class="form-lable" for="adddress">Address</label>
     <input
       class="form-control w-50"
-      placeholder="min 6 digites"
+      placeholder="Min 6 charcaters"
       required
       formControlName="address"
     />
     <div
+      class="form-group m-3 w-50"
       *ngIf="myform.controls.address.touched && myform.controls.address.invalid"
     >
       <p *ngIf="myform.controls.address.errors?.['required']">
-        Task is required
+        address is required
       </p>
       <p *ngIf="myform.controls.address.errors?.['minlength']">
-        Task should be at least 3 charcaters
+        address should be at least 6 charcaters
       </p>
+
       <p *ngIf="myform.controls.name.errors?.['pattern']">
         Please enter a vaild Task
       </p>
@@ -49,17 +54,21 @@
       formControlName="card"
       minlength="16"
       maxlength="16"
+      type="text"
     />
-    <div *ngIf="myform.controls.card.touched && myform.controls.card.invalid">
+    <div
+      class="form-group m-3 w-50"
+      *ngIf="myform.controls.card.touched && myform.controls.card.invalid"
+    >
       <p *ngIf="myform.controls.card.errors?.['required']">Task is required</p>
       <p *ngIf="myform.controls.card.errors?.['minlength']">
         Task should be at least 16 charcaters
       </p>
       <p *ngIf="myform.controls.card.errors?.['maxlength']">
-        Task should be at least 16 charcaters
+        card should be at least 16 digites
       </p>
       <p *ngIf="myform.controls.card.errors?.['pattern']">
-        Please enter a vaild Task
+        Please enter a vaild card number
       </p>
     </div>
   </div>

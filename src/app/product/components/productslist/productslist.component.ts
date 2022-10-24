@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
 import { ProductservicesService } from '../../services/productservices.service';
 
 @Component({
@@ -6,7 +8,7 @@ import { ProductservicesService } from '../../services/productservices.service';
   templateUrl: './productslist.component.html',
   styleUrls: ['./productslist.component.scss'],
 })
-export class ProductslistComponent implements OnInit {
+export class ProductslistComponent implements OnInit, OnDestroy {
   addbutton: boolean = false;
   products: any[] = [];
   Cartproducts: any[] = [];
@@ -18,6 +20,7 @@ export class ProductslistComponent implements OnInit {
 
   getProducts() {
     this.loading = true;
+
     this.prodservices.getAllproducts().subscribe(
       (data: any) => {
         this.products = data;
@@ -38,16 +41,18 @@ export class ProductslistComponent implements OnInit {
       );
       if (!exitsitem) {
         this.Cartproducts.push(obj);
-        alert(obj.item.name + ' add Successfully!');
+        Swal.fire(obj.item.name + ' Added Successfully!');
         localStorage.setItem('cart', JSON.stringify(this.Cartproducts));
       } else {
-        alert('Product  ' + obj.item.name + ' is added before!');
+        Swal.fire(obj.item.name + '  Added Before!');
       }
     } else {
       this.Cartproducts.push(obj);
-      alert(obj.item.name + ' add Successfully!');
+
+      Swal.fire(obj.item.name + ' Added Successfully!');
       localStorage.setItem('cart', JSON.stringify(this.Cartproducts));
     }
     this.loading = false;
   }
+  ngOnDestroy(): void {}
 }

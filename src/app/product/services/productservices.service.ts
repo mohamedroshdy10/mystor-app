@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 })
 export class ProductservicesService {
   constructor(private http: HttpClient) {}
-
   getAllproducts() {
     return this.http.get('/assets/data.json');
   }

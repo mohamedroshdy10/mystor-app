@@ -36,9 +36,6 @@ export class AddOrderComponent implements OnInit {
     if (this.myform.invalid) return;
     else {
       this.isSended = true;
-      if ('order' in localStorage) {
-        console.log(this.order);
-      }
       //this.url.navigateByUrl('/Confiramation');
       this.customerName = this.myform.value.name!;
     }

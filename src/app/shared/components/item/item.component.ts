@@ -15,9 +15,8 @@ export class ItemComponent implements OnInit {
 
   ngOnInit(): void {}
   getAmount(event: any) {
-    let v = event.target.value;
+    let v = +event.target.value;
     this.amount = v;
-    console.log(v + 'ADADADADADADADAD');
   }
   add() {
     this.product.emit({

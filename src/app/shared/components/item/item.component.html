@@ -19,6 +19,7 @@
     </button>
     <div class="d-flex w-50" *ngIf="addbutton">
       <select (change)="getAmount($event)" class="form-control" id="">
+        <option value="0">Count</option>
         <option hidden value="1">1</option>
         <option value="1">1</option>
         <option value="2">2</option>
