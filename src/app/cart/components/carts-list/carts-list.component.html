@@ -33,7 +33,7 @@
               class="form-control"
               type="number"
               min="1"
-              (change)="DetectCahnge()"
+              (ngModelChange)="DetectCahnge()"
               [(ngModel)]="item.quentity"
             />
             <button class="btn btn-dark" (click)="minAmount(index)">-</button>
